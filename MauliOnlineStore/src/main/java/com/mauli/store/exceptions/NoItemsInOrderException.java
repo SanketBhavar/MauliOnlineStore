@@ -1,4 +1,4 @@
-package com.ecommerce.store.exceptions;
+package com.mauli.store.exceptions;
 
 public class NoItemsInOrderException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package com.ecommerce.store.validation;
+package com.mauli.store.validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

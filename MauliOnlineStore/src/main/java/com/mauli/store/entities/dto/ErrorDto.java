@@ -1,4 +1,4 @@
-package com.ecommerce.store.entities.dto;
+package com.mauli.store.entities.dto;
 
 import io.swagger.annotations.ApiModel;
 import lombok.Builder;

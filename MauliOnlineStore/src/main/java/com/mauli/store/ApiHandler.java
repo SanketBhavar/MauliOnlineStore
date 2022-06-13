@@ -1,4 +1,4 @@
-package com.ecommerce.store;
+package com.mauli.store;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.OptimisticLockingFailureException;
@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import com.ecommerce.store.entities.dto.ErrorDto;
-import com.ecommerce.store.exceptions.NoItemsInOrderException;
-import com.ecommerce.store.exceptions.ProductNotExistsException;
+
+import com.mauli.store.entities.dto.ErrorDto;
+import com.mauli.store.exceptions.NoItemsInOrderException;
+import com.mauli.store.exceptions.ProductNotExistsException;
 
 @ControllerAdvice
 @Slf4j
-public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
+public class ApiHandler extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status,
