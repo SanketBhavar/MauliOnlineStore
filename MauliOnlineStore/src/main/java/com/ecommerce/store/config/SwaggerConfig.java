@@ -22,9 +22,9 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiEndPointsInfo() {
-        return new ApiInfoBuilder().title("Online Store REST API")
-                                   .description("CRUD service for an Online (E-commerce) Store")
-                                   .contact(new Contact("Prasad Subrahmanya", "https://github.com/prasadus92", "prasadus92@gmail.com"))
+        return new ApiInfoBuilder().title("Mauli Online Store")
+                                   .description("CRUD service for an Online Store")
+                                   .contact(new Contact("Sanket Bhavar", "https://github.com/SanketBhavar", "bhavarsanket2710@gmail.com"))
                                    .license("MIT License")
                                    .licenseUrl("https://opensource.org/licenses/MIT")
                                    .build();
