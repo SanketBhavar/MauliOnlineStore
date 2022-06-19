@@ -279,6 +279,15 @@ public class ProductControllerTest {
                                                        .build();
 
         //@formatter:off
-        
+        return given()
+            .contentType(ContentType.JSON)
+            .body(product)
+            .when()
+            .post(path)
+            .then()
+            .statusCode(HttpStatus.SC_CREATED)
+            .extract()
+            .path("id");
+        //@formatter:on
     }
 }
