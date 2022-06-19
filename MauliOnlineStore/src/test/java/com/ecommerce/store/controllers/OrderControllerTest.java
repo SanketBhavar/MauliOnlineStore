@@ -167,15 +167,7 @@ public class OrderControllerTest {
             .then()
             .statusCode(HttpStatus.SC_CREATED);
 
-        given()
-            .contentType(ContentType.JSON)
-            .queryParam("start", LocalDateTime.now().minusMinutes(2).toString())
-            .queryParam("end", LocalDateTime.now().toString())
-            .when()
-            .get(path)
-            .then()
-            .statusCode(HttpStatus.SC_OK)
-            .body("size()", greaterThanOrEqualTo(1));
+       
         //@formatter:on
     }
 }
