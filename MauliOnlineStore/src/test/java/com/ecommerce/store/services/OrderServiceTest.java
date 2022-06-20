@@ -102,21 +102,5 @@ public class OrderServiceTest {
         assertThat(capturedOrders.get(1).getItems(), hasSize(1));
     }
 
-    @TestConfiguration
-    static class OrderServiceTestContextConfiguration {
-
-        @MockBean
-        private OrderRepository orderRepository;
-
-        @MockBean
-        private OrderItemRepository orderItemRepository;
-
-        @MockBean
-        private ProductRepository productRepository;
-
-        @Bean
-        public OrderService orderService() {
-            return new OrderServiceImpl(orderRepository, orderItemRepository, productRepository);
-        }
     }
 }
