@@ -57,14 +57,14 @@ public class ProductServiceTest {
             .createProduct(ProductCreationDto.builder()
                                              .name("Batarang")
                                              .description("Small but deadliest weapon of Batman")
-                                             .price(8000.5)
+                                             .price(9000.5)
                                              .build());
 
         // Then
         verify(productRepository, times(1)).save(productArgumentCaptor.capture());
         assertThat(productArgumentCaptor.getValue(), hasProperty("name", equalTo("Batarang")));
         assertThat(productArgumentCaptor.getValue(), hasProperty("description", equalTo("Small but deadliest weapon of Batman")));
-        assertThat(productArgumentCaptor.getValue(), hasProperty("price", equalTo(8000.5)));
+        assertThat(productArgumentCaptor.getValue(), hasProperty("price", equalTo(9000.5)));
     }
 
     @Test
