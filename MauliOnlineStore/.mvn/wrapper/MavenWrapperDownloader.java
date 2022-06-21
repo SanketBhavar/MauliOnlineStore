@@ -71,7 +71,7 @@ public class MavenWrapperDownloader {
                 }
             }
         }
-        System.out.println("- Downloading from: " + url);
+        System.out.println(" -Downloading from: " + url);
 
         File outputFile = new File(baseDirectory.getAbsolutePath(), MAVEN_WRAPPER_JAR_PATH);
         if (!outputFile.getParentFile().exists()) {
@@ -86,7 +86,7 @@ public class MavenWrapperDownloader {
             System.out.println("Done");
             System.exit(0);
         } catch (Throwable e) {
-            System.out.println("- Error downloading");
+            System.out.println(" -Error downloading");
             e.printStackTrace();
             System.exit(1);
         }
