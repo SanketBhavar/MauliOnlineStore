@@ -51,7 +51,6 @@ public class ProductServiceTest {
                                  .price(8000.5)
                                  .build();
         when(productRepository.save(product)).thenReturn(product);
-
         // When
         productService
             .createProduct(ProductCreationDto.builder()
@@ -85,8 +84,7 @@ public class ProductServiceTest {
                                  .build();
         when(productRepository.findById(productId)).thenReturn(Optional.of(product));
         when(productRepository.save(product)).thenReturn(updated);
-
-        // When
+       // When
         Product returned = productService
             .updateProduct(ProductUpdationDto.builder()
                                              .id(productId)
@@ -109,7 +107,6 @@ public class ProductServiceTest {
     public void testProductUpdationThrowsExceptionForNonExistingProduct() {
         // Given
         when(productRepository.findById(any())).thenReturn(Optional.empty());
-
         // When
         Exception exception = assertThrows(
             ProductNotExistsException.class,
