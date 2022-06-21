@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-java -jar ecommerce-store-application.jar
+java -jar mauli-online-store-application.jar
