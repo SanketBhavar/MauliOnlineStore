@@ -1,4 +1,4 @@
-package com.ecommerce.store;
+package com.mauli.online.store;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
