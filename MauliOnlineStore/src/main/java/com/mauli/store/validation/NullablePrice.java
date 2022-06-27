@@ -7,6 +7,15 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Target ({ElementType.METHOD, ElementType.FIELD})
+@Retention (RetentionPolicy.RUNTIME)
+@Constraint (validatedBy = NullablePriceValidator.class)
+public @interface NullablePrice {
 
+    String message() default "Price value should be greater than 0";
+
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
 }
 
