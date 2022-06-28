@@ -25,21 +25,7 @@ import java.util.List;
 @Slf4j
 public class OrderController {
 
-    private final OrderService orderService;
-
-    @ApiOperation (value = "Place a new Order", response = ResponseEntity.class)
-    @ApiResponses ({
-        @ApiResponse (code = 201, message = "Created"),
-        @ApiResponse (code = 400, message = "Bad Request"),
-        @ApiResponse (code = 403, message = "Forbidden")
-    })
-    @PostMapping (produces = "application/json")
-    @ResponseBody
-    public ResponseEntity placeOrder(@RequestBody @Valid OrderDto order) {
-        log.info("### New Order creation request - {}", order);
-        Order created = orderService.placeOrder(order);
-        return new ResponseEntity(created, HttpStatus.CREATED);
-    }
+   
 
     @ApiOperation (value = "Fetch a list of Orders within a time period", response = List.class)
     @ApiResponses ({
