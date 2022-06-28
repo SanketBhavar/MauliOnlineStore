@@ -29,7 +29,7 @@ public class ProductController {
     @ApiOperation (value = "Create a new Product", response = ResponseEntity.class)
     @ApiResponses ({
         @ApiResponse (code = 201, message = "Created"),
-        @ApiResponse (code = 400, message = "Bad Request"),
+        @ApiResponse (code = 401, message = "Bad Request"),
         @ApiResponse (code = 403, message = "Forbidden"),
         @ApiResponse (code = 409, message = "Conflict")
     })
@@ -41,5 +41,31 @@ public class ProductController {
         Product created = productService.createProduct(product);
         return new ResponseEntity(created, HttpStatus.CREATED);
     }
+ @ApiOperation (value = "Update an existing Product", response = ResponseEntity.class)
+    @ApiResponses ({
+        @ApiResponse (code = 200, message = "OK"),
+        @ApiResponse (code = 401, message = "Bad Request"),
+        @ApiResponse (code = 403, message = "Forbidden")
+    })
+    @PutMapping (produces = "application/json")
+    @ResponseBody
+    public ResponseEntity updateProduct(@RequestBody @Valid ProductUpdationDto product) {
+        log.info("### Product updation request - {}", product);
 
-   
+        Product updated = productService.updateProduct(product);
+        return new ResponseEntity(updated, HttpStatus.OK);
+    }
+
+    @ApiOperation (value = "Fetch a list of all existing Products", response = List.class)
+    @ApiResponses ({
+        @ApiResponse (code = 200, message = "OK"),
+        @ApiResponse (code = 400, message = "Bad Request"),
+        @ApiResponse (code = 403, message = "Forbidden")
+    })
+    @GetMapping (produces = "application/json")
+    public List<Product> getAllProducts() {
+        log.info("### Fetching the list of all products");
+        return productService.getAllProducts();
+    }
+}
+
