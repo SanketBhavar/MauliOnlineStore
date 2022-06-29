@@ -71,6 +71,8 @@ public class OrderItem implements Serializable {
                quantity.equals(orderItem.quantity);
     }
 
-   
-    
+    @Override
+    public int hashCode() {
+        return Objects.hash(order, product, quantity);
+    }
 }
