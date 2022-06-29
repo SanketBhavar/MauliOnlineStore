@@ -57,6 +57,20 @@ public class OrderItem implements Serializable {
     @UpdateTimestamp
     @Column (name = "updated_at")
     private LocalDateTime updatedAt;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        OrderItem orderItem = (OrderItem) o;
+        return order.equals(orderItem.order) &&
+               product.equals(orderItem.product) &&
+               quantity.equals(orderItem.quantity);
+    }
 
+   
     
 }
